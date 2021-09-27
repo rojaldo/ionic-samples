@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DisplayComponent implements OnInit {
 
-  @Input() text = ' ';
+  @Input() text = '';
   
   constructor() { }
 

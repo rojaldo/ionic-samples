@@ -1,17 +1,4 @@
-<!-- <form name="Calculator" class="calculator">
-    <table border="2" align="center" cellpadding="15" cellspacing="12">
-        <tr>
-            <td>
-                <app-display [text]="display"></app-display>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <app-keyboard (onKeyboard)="onKeyPressed($event)"></app-keyboard>
-            </td>
-
-        </tr>
-    </table>
-</form> -->
-<app-display [text]="display"></app-display>
-<app-keyboard (onKeyboard)="onKeyPressed($event)"></app-keyboard>
+<ion-grid fixed>
+    <app-display [text]="display"></app-display>
+    <app-keyboard (onKeyboard)="onKeyPressed($event)"></app-keyboard>
+</ion-grid>
