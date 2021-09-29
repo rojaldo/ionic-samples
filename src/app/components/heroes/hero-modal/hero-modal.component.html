@@ -1,0 +1,23 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Modal Content</ion-title>
+    <ion-buttons slot="end">
+      <ion-button onclick="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Nombre</ion-label>
+      <ion-input placeholder="nombre del héroe" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Descripción</ion-label>
+      <ion-input placeholder="Descripción del héroe" [(ngModel)]="description"></ion-input>
+    </ion-item>
+    <ion-button (click)="onClick()" expand="block" fill="solid">
+      Nuevo héroe
+    </ion-button>
+  </ion-list>
+</ion-content>
