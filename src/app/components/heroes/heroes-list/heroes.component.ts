@@ -23,6 +23,10 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit() {}
 
+  remove(i: number) {
+    this.heroes.splice(i, 1); 
+  }
+
   async presentModal() {
 
     const modal = await this.modalController.create({
