@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import * as moment from 'moment';
 import { ApodService } from 'src/app/services/apod.service';
 
@@ -7,9 +7,9 @@ import { ApodService } from 'src/app/services/apod.service';
   templateUrl: './apod.component.html',
   styleUrls: ['./apod.component.scss'],
 })
-export class ApodComponent implements OnInit {
+export class ApodComponent implements OnInit, OnDestroy, OnChanges {
 
-  apod = {};
+  apod: any = {};
 
   constructor(public service: ApodService) {
     this.service.apod$.subscribe(apod => {
@@ -24,6 +24,16 @@ export class ApodComponent implements OnInit {
       this.apod = this.service.apod;
     }
   }
+
+  ngOnDestroy(): void {
+    console.log('destroyed: ' + this.constructor.name);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('changes: ' + changes);
+  }
+
+
 
   // get year string from date
   handleChange(event) {
