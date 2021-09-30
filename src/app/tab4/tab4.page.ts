@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class Tab4Page {
 
+  ionViewDidEnter() {
+    console.log('ionViewDidLoad Tab4Page');
+  }
+
   constructor() {}
 
 }

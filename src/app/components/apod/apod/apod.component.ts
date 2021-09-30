@@ -10,6 +10,7 @@ import { ApodService } from 'src/app/services/apod.service';
 export class ApodComponent implements OnInit, OnDestroy, OnChanges {
 
   apod: any = {};
+  stringDate = '';
 
   constructor(public service: ApodService) {
     this.service.apod$.subscribe(apod => {
@@ -33,13 +34,9 @@ export class ApodComponent implements OnInit, OnDestroy, OnChanges {
     console.log('changes: ' + changes);
   }
 
-
-
-  // get year string from date
-  handleChange(event) {
-    console.log(event.target.value);
-    const stringDate = moment(event.target.value).format('YYYY-MM-DD');
-    this.service.getApod(stringDate);
+  handleChange(stringDate) {
+    console.log('handleChange: ' + stringDate);
+    this.stringDate = stringDate;
   }
 
 

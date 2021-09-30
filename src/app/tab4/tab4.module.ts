@@ -11,6 +11,8 @@ import { BeersComponent } from '../components/beers/beers/beers.component';
 import { BeersService } from '../services/beers.service';
 import { AbvPipe } from '../pipes/abv.pipe';
 import { ApodComponent } from '../components/apod/apod/apod.component';
+import { DateApodComponent } from '../components/apod/date-apod/date-apod.component';
+import { ShowApodComponent } from '../components/apod/show-apod/show-apod.component';
 
 @NgModule({
   imports: [
@@ -21,7 +23,7 @@ import { ApodComponent } from '../components/apod/apod/apod.component';
     RouterModule.forChild([{ path: '', component: Tab4Page }]),
     Tab3PageRoutingModule,
   ],
-  declarations: [Tab4Page, ApodComponent],
+  declarations: [Tab4Page, ApodComponent, DateApodComponent, ShowApodComponent],
   providers: [BeersService],
 })
 export class Tab4PageModule {}

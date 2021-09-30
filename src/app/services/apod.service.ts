@@ -16,7 +16,7 @@ export class ApodService {
 
   getApod(stringDate?: string): void {
     let url = 'https://api.nasa.gov/planetary/apod?api_key=' + this.key;
-    if(stringDate !== undefined) {
+    if(stringDate !== undefined || stringDate !== '') {
       url = 'https://api.nasa.gov/planetary/apod?date='+ stringDate +'&api_key='+ this.key;
     }
     this.http.get(url).subscribe(data => {
