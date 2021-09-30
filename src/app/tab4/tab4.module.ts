@@ -10,6 +10,7 @@ import { Tab3PageRoutingModule } from './tab4-routing.module';
 import { BeersComponent } from '../components/beers/beers/beers.component';
 import { BeersService } from '../services/beers.service';
 import { AbvPipe } from '../pipes/abv.pipe';
+import { ApodComponent } from '../components/apod/apod/apod.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { AbvPipe } from '../pipes/abv.pipe';
     RouterModule.forChild([{ path: '', component: Tab4Page }]),
     Tab3PageRoutingModule,
   ],
-  declarations: [Tab4Page],
+  declarations: [Tab4Page, ApodComponent],
   providers: [BeersService],
 })
-export class Tab3PageModule {}
+export class Tab4PageModule {}

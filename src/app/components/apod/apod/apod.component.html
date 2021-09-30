@@ -1,0 +1,18 @@
+<ion-item>
+  <ion-label>MM DD YY</ion-label>
+  <ion-datetime displayFormat="MM DD YY" placeholder="Elige fecha" (ionChange)="handleChange($event)"></ion-datetime>
+</ion-item>
+<ion-item>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        <h1>{{apod.title}}</h1>
+      </ion-card-title>
+      <ion-card-subtitle>{{apod.date}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <img [src]="apod.url" [alt]="apod.url">
+      <p>{{apod.explanation}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-item>
