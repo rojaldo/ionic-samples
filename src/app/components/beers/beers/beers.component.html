@@ -1,5 +1,10 @@
+<ion-item>
+  <ion-range id="dual-range" min="0" max="60" dual-knobs pin [value]="range" (ionChange)="handleChange($event)">
+
+  </ion-range>
+</ion-item>
 <ion-list>
-  <ion-card *ngFor="let beer of beers">
+  <ion-card *ngFor="let beer of showBeers">
     <ion-card-header>
       <ion-card-title>{{beer.name}}</ion-card-title>
       <ion-card-subtitle>{{ beer.abv | abv }}</ion-card-subtitle>

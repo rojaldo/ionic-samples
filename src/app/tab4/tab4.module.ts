@@ -13,6 +13,8 @@ import { AbvPipe } from '../pipes/abv.pipe';
 import { ApodComponent } from '../components/apod/apod/apod.component';
 import { DateApodComponent } from '../components/apod/date-apod/date-apod.component';
 import { ShowApodComponent } from '../components/apod/show-apod/show-apod.component';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+
 
 @NgModule({
   imports: [
@@ -24,6 +26,6 @@ import { ShowApodComponent } from '../components/apod/show-apod/show-apod.compon
     Tab3PageRoutingModule,
   ],
   declarations: [Tab4Page, ApodComponent, DateApodComponent, ShowApodComponent],
-  providers: [BeersService],
+  providers: [BeersService, Geolocation],
 })
 export class Tab4PageModule {}
