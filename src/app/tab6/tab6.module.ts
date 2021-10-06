@@ -13,6 +13,7 @@ import { ShowApodComponent } from '../components/apod/show-apod/show-apod.compon
 import { ApodService } from '../services/apod.service';
 import { NativeComponent } from '../components/native/native.component';
 import { TrivialComponent } from '../components/trivial/trivial.component';
+import { CardComponent } from '../components/trivial/card/card.component';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { TrivialComponent } from '../components/trivial/trivial.component';
     RouterModule.forChild([{ path: '', component: Tab6Page }]),
     Tab6PageRoutingModule,
   ],
-  declarations: [Tab6Page, TrivialComponent],
+  declarations: [Tab6Page, TrivialComponent, CardComponent],
   providers: [],
 })
 export class Tab6PageModule {}

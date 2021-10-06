@@ -1,3 +1,11 @@
-<p>
-  trivial works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{score}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-list>
+  <app-card [cardInfo]="cardInfo" *ngFor="let cardInfo of cards" (onCardClick)="handleScore($event)"></app-card>
+</ion-list>
+<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+  <ion-infinite-scroll-content></ion-infinite-scroll-content>
+</ion-infinite-scroll>
