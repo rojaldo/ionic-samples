@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BeersService } from 'src/app/services/beers.service';
+import { Storage } from '@capacitor/storage';
 
 @Component({
   selector: 'app-beers',
   templateUrl: './beers.component.html',
   styleUrls: ['./beers.component.scss'],
 })
-export class BeersComponent implements OnInit {
+export class BeersComponent implements OnInit, OnDestroy {
 
   beers: any[] = [];
   showBeers: any[] = [];
@@ -26,7 +27,24 @@ export class BeersComponent implements OnInit {
         console.log(error);
       }
     );
+    const checkName = async () => {
+      const stringRange = await Storage.get({ key: 'range' });
+      // string to object
+      this.range = JSON.parse(stringRange.value);
+  
+    };
   }
+
+  ngOnDestroy(): void {
+    const setName = async () => {
+      await Storage.set({
+        key: 'range',
+        value: JSON.stringify(this.range),
+      });
+    };
+    console.log(setName);
+  }
+
 
   filterBeers(): any[] {
     return this.beers.filter((beer, index) => {
@@ -42,6 +60,8 @@ export class BeersComponent implements OnInit {
     if (event.target.value !== this.range) {
       this.range = event.target.value;
       this.showBeers = this.filterBeers();
+
+      
     }
   }
 

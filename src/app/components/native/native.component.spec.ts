@@ -1,22 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-import { ApodService } from 'src/app/services/apod.service';
 
-import { ApodComponent } from './apod.component';
+import { NativeComponent } from './native.component';
 
-describe('ApodComponent', () => {
-  let component: ApodComponent;
-  let fixture: ComponentFixture<ApodComponent>;
+describe('NativeComponent', () => {
+  let component: NativeComponent;
+  let fixture: ComponentFixture<NativeComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ApodComponent ],
-      providers: [ApodService],
+      declarations: [ NativeComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ApodComponent);
-    const service = TestBed.inject(ApodService);
+    fixture = TestBed.createComponent(NativeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

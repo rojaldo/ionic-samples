@@ -3,14 +3,16 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Tab4Page } from './tab4.page';
+import { Tab6Page } from './tab6.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-import { Tab3PageRoutingModule } from './tab4-routing.module';
+import { Tab6PageRoutingModule } from './tab6-routing.module';
 import { ApodComponent } from '../components/apod/apod/apod.component';
 import { DateApodComponent } from '../components/apod/date-apod/date-apod.component';
 import { ShowApodComponent } from '../components/apod/show-apod/show-apod.component';
 import { ApodService } from '../services/apod.service';
+import { NativeComponent } from '../components/native/native.component';
+import { TrivialComponent } from '../components/trivial/trivial.component';
 
 
 @NgModule({
@@ -19,10 +21,10 @@ import { ApodService } from '../services/apod.service';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    RouterModule.forChild([{ path: '', component: Tab4Page }]),
-    Tab3PageRoutingModule,
+    RouterModule.forChild([{ path: '', component: Tab6Page }]),
+    Tab6PageRoutingModule,
   ],
-  declarations: [Tab4Page, ApodComponent, DateApodComponent, ShowApodComponent],
-  providers: [ApodService],
+  declarations: [Tab6Page, TrivialComponent],
+  providers: [],
 })
-export class Tab4PageModule {}
+export class Tab6PageModule {}

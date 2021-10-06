@@ -1,7 +1,7 @@
 import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
-import * as moment from 'moment';
 import { ApodService } from 'src/app/services/apod.service';
-import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Geolocation } from '@capacitor/geolocation';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-apod',
@@ -14,7 +14,7 @@ export class ApodComponent implements OnInit, OnDestroy, OnChanges {
   location = 'Location: ';
   stringDate = '';
 
-  constructor(public service: ApodService, private geolocation: Geolocation) {
+  constructor(public service: ApodService) {
     this.service.apod$.subscribe(apod => {
       this.apod = apod;
     });
@@ -27,6 +27,7 @@ export class ApodComponent implements OnInit, OnDestroy, OnChanges {
       this.apod = this.service.apod;
     }
     console.log('init: ' + this.constructor.name);
+
     
   }
 
